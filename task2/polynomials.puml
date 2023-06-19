@@ -1,0 +1,23 @@
+@startuml
+
+skinparam dpi 150
+
+class CliApp{
+
+-create_parser(self)
+-extract_values(self)
+-make_result(self) -> int(result)
+---
++__init__(self, argv)
++__call__(self)
+}
+
+class TestSearchPolynomials{
+-test_create_parser(self)
+-test_extract_values(self)
+-test_make_result(self) -> result
+}
+
+CliApp --* TestSearchPolynomials
+
+@enduml

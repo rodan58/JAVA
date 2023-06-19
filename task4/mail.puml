@@ -1,0 +1,41 @@
+@startuml
+
+skinparam dpi 150
+
+class Mail{
+-search_paramter(self, parameter)
+---
++__init__(self, text)
+}
+
+class MailParser{
+-search_paramter(self, parameter)
+-search_mails(self)
+-append_correct_mail(self, text)
+-search_average_X_DSPAM_Probability(self)
+-count_authors_n_mails(self)
+-count_spamers(self)
+-show_histogram_with_users(self)
+---
++__init__(self, mail_file)
+}
+
+class TestMail{
++test_search_paramter(self)
+---
+
+}
+
+class TestMailParser{
++test_append_correct_mail(self)
++test_search_average_X_DSPAM_Probability(self)
++test_search_mails(self)
++test_count_authors_n_mails(self)
++test_count_spamers(self)
+}
+
+TestMail --* Mail
+MailParser --* Mail
+MailParser *-- TestMailParser
+
+@enduml

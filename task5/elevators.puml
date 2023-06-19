@@ -1,0 +1,44 @@
+@startuml
+
+skinparam dpi 150
+
+class Elevator{
++__init__(self)
++self.floor
+}
+
+
+class ElevatorSystem{
+-call_elevator(self, floor)
+-search_nearest_elevator(self, floor, without=[])
+-is_there_elevator_on_first_floor(self)
+---
++__init__(self, number_of_floors, number_of_elevators)
+}
+
+class TestElevatorSystem{
+-test_is_there_elevator_on_first_floor(self)
+-test_search_nearest_elevator(self)
+---
++test_call_elevator(self)
+}
+
+diamond Elevator1
+diamond Elevator2
+diamond Elevator3
+
+ElevatorSystem *-- Elevator1
+ElevatorSystem *-- Elevator2
+ElevatorSystem *-- Elevator3
+
+Elevator1 <|.. Elevator
+Elevator2 <|.. Elevator
+Elevator3 <|.. Elevator
+
+TestElevatorSystem *-- ElevatorSystem 
+
+note left of Elevator1: Elevator-1
+note left of Elevator2: Elevator-2
+note left of Elevator3: Elevator-3
+
+@enduml

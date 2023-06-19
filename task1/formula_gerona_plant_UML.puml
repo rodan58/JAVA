@@ -1,0 +1,20 @@
+@startuml
+
+skinparam dpi 150
+
+class SquareRoot{
+-__init__(self) -> int(res)
+-sqrt(self, number) -> int(answer)
+-_iter(self, answer) -> self._average(answer, self.number / answer): float
+-_improve(self, answer) -> self._average(answer, self.number / answer): float
+-_average(self, x, y) -> (x + y) / 2: float
+-_is_right_answer(self, answer) -> Bool
+}
+
+class TestFormulaGerona{
++def test_sqrt(self) -> assert round(res_1, 5) == round(res_2, 5)
+}
+
+TestFormulaGerona *-- SquareRoot
+
+@enduml

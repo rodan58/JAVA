@@ -1,0 +1,45 @@
+@startuml
+
+skinparam dpi 150
+
+class Filter{
+-def __init__(self, window_size)
+---
++def create_results(self, numbers):
++def create_windows(self, numbers):
++def create_one_value(self, window):
+}
+
+class SMA{
+-create_results(self) -> List[]
+---
++__init__(self, window_size, numbers=[]) -> List[]
++add_one_number(self, number, add_to_numbers=Bool: True) -> float: number
+}
+
+class MF{
+-eplacing_empty_values(self, window)
+-create_results(self) -> List[]
+---
++__init__(self, window_size, numbers=[]) -> List[]
++create_one_median(self, window) -> float: number
+}
+
+class MovingAverages{
+-create_objects(self, window_sizes, Class) -> obj
+---
++__init__(self, filename)
++__call__(self, window_sizes=[3, 5])
++show_plot(self, data=[], plot_name="")
+}
+
+class App{}
+
+SMA <|-- Filter
+MF <|-- Filter
+
+MovingAverages *-- SMA
+MovingAverages *-- MF
+
+App *-- MovingAverages 
+@enduml
